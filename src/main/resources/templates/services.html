@@ -1,0 +1,121 @@
+<html th:replace="~{base::layout(~{::main})}">
+
+  <body>
+    <main>
+      <div class="row">
+      	<!-- Hero Section -->
+      <section class="py-5 text-white text-center" style="background: linear-gradient(rgba(20,83,45,0.9), rgba(20,83,45,0.9)), url('https://source.unsplash.com/1600x600/?farm,agriculture'); background-size: cover; background-position: center;">
+        <div class="container">
+          <h1 class="fw-bold display-5">Our Services</h1>
+          <p class="lead">Empowering farmers and merchants with seamless agricultural trading solutions</p>
+        </div>
+      </section>
+      	
+      </div>
+      <!-- Services Section -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold" style="color: #14532d;">🌱 What We Offer</h2>
+            <p class="text-muted">Delivering trusted solutions that make agriculture trading easy and transparent</p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Service 1 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card h-100 border-0 shadow service-card text-center p-4">
+                <div class="icon-wrapper mx-auto mb-3">
+                  <i class="fas fa-tractor fa-2x"></i>
+                </div>
+                <h5 class="fw-bold" style="color:#14532d;">Farmer Support</h5>
+                <p class="text-muted">Helping farmers connect directly with buyers to maximize profits and reduce middlemen dependency.</p>
+              </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card h-100 border-0 shadow service-card text-center p-4">
+                <div class="icon-wrapper mx-auto mb-3">
+                  <i class="fas fa-seedling fa-2x"></i>
+                </div>
+                <h5 class="fw-bold" style="color:#14532d;">Organic Products</h5>
+                <p class="text-muted">Providing verified organic produce to ensure quality and health benefits for consumers and businesses.</p>
+              </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="card h-100 border-0 shadow service-card text-center p-4">
+                <div class="icon-wrapper mx-auto mb-3">
+                  <i class="fas fa-truck fa-2x"></i>
+                </div>
+                <h5 class="fw-bold" style="color:#14532d;">Logistics & Delivery</h5>
+                <p class="text-muted">Efficient supply chain solutions to ensure timely delivery of products from farm to market.</p>
+              </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="card h-100 border-0 shadow service-card text-center p-4">
+                <div class="icon-wrapper mx-auto mb-3">
+                  <i class="fas fa-balance-scale fa-2x"></i>
+                </div>
+                <h5 class="fw-bold" style="color:#14532d;">Fair Pricing</h5>
+                <p class="text-muted">Transparent pricing system ensuring fairness for both farmers and merchants.</p>
+              </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+              <div class="card h-100 border-0 shadow service-card text-center p-4">
+                <div class="icon-wrapper mx-auto mb-3">
+                  <i class="fas fa-handshake fa-2x"></i>
+                </div>
+                <h5 class="fw-bold" style="color:#14532d;">Merchant Network</h5>
+                <p class="text-muted">Expanding merchant access to fresh produce from reliable farmers across the region.</p>
+              </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+              <div class="card h-100 border-0 shadow service-card text-center p-4">
+                <div class="icon-wrapper mx-auto mb-3">
+                  <i class="fas fa-chart-line fa-2x"></i>
+                </div>
+                <h5 class="fw-bold" style="color:#14532d;">Market Insights</h5>
+                <p class="text-muted">Real-time data & analytics to help farmers and merchants make informed trading decisions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Services CSS -->
+<style>
+  .service-card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+  .icon-wrapper {
+    background: #e6f4ea;
+    color: #14532d;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+</style>
+      
+    </main>
+  </body>
+</html>
+
+
+<!-- FontAwesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

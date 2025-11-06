@@ -1,0 +1,88 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+  <body>
+    <main>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card shadow border-0 rounded-3">
+            
+            <!-- Header -->
+            <div class="card-header bg-success">
+              <h4 class="text-center text-white m-0 fw-bold">📩 Manage Enquiries</h4>
+            </div>
+            
+            <!-- Table -->
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-striped align-middle" id="enquiryTable">
+                  <thead class="table-dark text-white">
+                    <tr>
+                      <th class="text-white">Sr. No.</th>
+                      <th class="text-white">Name</th>
+                      <th class="text-white">Contact No</th>
+                      <th class="text-white">Email</th>
+                      <th class="text-white">Subject</th>
+                      <th class="text-white">Message</th>
+                      <th class="text-white">Address</th>
+                      <th class="text-white">Enquiry Date</th>
+                      <th class="text-white">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr th:each="enquiry, srno : ${enquiryList}">
+                      <td th:text="${srno.index + 1}"></td>
+                      <td th:text="${enquiry.name}"></td>
+                      <td th:text="${enquiry.contactNo}"></td>
+                      <td th:text="${enquiry.email}"></td>
+                      <td th:text="${enquiry.subject}"></td>
+                      <td>
+  							<span th:text="${#strings.abbreviate(enquiry.message, 40)}"></span>
+  							<a href="javascript:void(0)" class="text-primary ms-1"
+     							data-bs-toggle="modal" th:data-bs-target="'#msgModal__' + ${enquiry.id}">
+     							Read
+  							</a>
+						</td>
+
+                      <td th:text="${enquiry.address}"></td>
+                      <td th:text="${#temporals.format(enquiry.enquiryDate, 'dd-MM-yyyy HH:mm')}"></td>
+                      <td>
+                        <a th:href="@{DeleteEnquiry(id=${enquiry.id})}" 
+                           class="btn btn-danger btn-sm shadow-sm"
+                           onclick="return confirm('Are you sure you want to delete this enquiry?');">
+                           <i class="bi bi-trash"></i> Delete
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <!-- Message Modals -->
+      <div th:each="enquiry : ${enquiryList}">
+        <div class="modal fade" th:id="'msgModal__' + ${enquiry.id}" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+              <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Enquiry from <span th:text="${enquiry.name}"></span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">X</button>
+              </div>
+              <div class="modal-body">
+                <p><strong>Subject:</strong> <span th:text="${enquiry.subject}"></span></p>
+                <p><strong>Message:</strong></p>
+                <p class="text-muted" th:text="${enquiry.message}"></p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+  </body>
+</html>

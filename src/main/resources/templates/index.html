@@ -1,0 +1,535 @@
+<html th:replace="~{base::layout(~{::main})}">
+  <body>
+    <main>
+
+      <!-- HERO SECTION -->
+      <div class="row">
+        <div class="col-sm-12 p-0">
+          <section class="position-relative text-white" style="background: linear-gradient(to bottom, rgba(20,83,45,0.9), rgba(0,0,0,0.7));">
+            <!-- Background -->
+            <div class="position-absolute top-0 start-0 w-100 h-100">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                   class="w-100 h-100"
+                   style="object-fit: cover; opacity: 0.35;">
+            </div>
+
+            <!-- Gradient Overlay -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" 
+                 style="background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(20,83,45,0.85));"></div>
+
+            <!-- Content -->
+            <div class="container position-relative py-5">
+              <div class="row justify-content-center align-items-center" style="min-height: 90vh;">
+                <div class="col-lg-10 text-center">
+                  <h1 class="display-4 fw-bold mb-3 text-warning">
+                    Empowering Agriculture with Smart Trading
+                  </h1>
+                  <p class="lead mb-5 fs-5 text-light">
+                    Agritrade Hub connects farmers and merchants in a secure, transparent, and profitable marketplace.
+                  </p>
+
+                  <div class="row text-center mb-5">
+                    <div class="col-md-4 mb-4">
+                      <div class="p-4 rounded-4 h-100" style="background: rgba(255,193,7,0.15); border: 1px solid rgba(255,193,7,0.4);">
+                        <i class="bi bi-cash-coin fs-1 text-warning"></i>
+                        <h5 class="mt-3 fw-bold">Fair Pricing</h5>
+                        <p class="small text-light">Best rates directly from buyers.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                      <div class="p-4 rounded-4 h-100" style="background: rgba(25,135,84,0.15); border: 1px solid rgba(25,135,84,0.4);">
+                        <i class="bi bi-shield-check fs-1 text-success"></i>
+                        <h5 class="mt-3 fw-bold">Secure Transactions</h5>
+                        <p class="small text-light">Verified buyers & safe payments.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                      <div class="p-4 rounded-4 h-100" style="background: rgba(13,110,253,0.15); border: 1px solid rgba(13,110,253,0.4);">
+                        <i class="bi bi-truck fs-1 text-primary"></i>
+                        <h5 class="mt-3 fw-bold">Reliable Logistics</h5>
+                        <p class="small text-light">Easy delivery & pickup options.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="#register-farmer" class="btn btn-warning btn-lg fw-semibold shadow-lg px-4">
+                      <i class="bi bi-basket2-fill me-2"></i> Start Selling
+                    </a>
+                    <a href="#register-merchant" class="btn btn-outline-light btn-lg fw-semibold shadow-lg px-4">
+                      <i class="bi bi-cart-fill me-2"></i> Start Buying
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- HOW IT WORKS (WHITE BACKGROUND) -->
+<!-- How It Works Section -->
+<section class="py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="color: #14532d;">🚜 How Agritrade Hub Works</h2>
+      <p class="text-muted fs-5">Seamless connection between farmers and merchants</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Step 1 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card border-0 shadow-sm h-100 how-card text-center p-4">
+          <div class="icon-circle mb-3">
+            <i class="bi bi-shop fs-1 text-success"></i>
+          </div>
+          <h5 class="fw-bold" style="color: #14532d;">Farmers List Products</h5>
+          <p class="text-muted">Farmers upload product details, prices, and images to reach buyers directly.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card border-0 shadow-sm h-100 how-card text-center p-4">
+          <div class="icon-circle mb-3">
+            <i class="bi bi-cart-check fs-1 text-success"></i>
+          </div>
+          <h5 class="fw-bold" style="color: #14532d;">Merchants Purchase Online</h5>
+          <p class="text-muted">Merchants browse and buy products using secure online payment methods.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card border-0 shadow-sm h-100 how-card text-center p-4">
+          <div class="icon-circle mb-3">
+            <i class="bi bi-truck fs-1 text-success"></i>
+          </div>
+          <h5 class="fw-bold" style="color: #14532d;">Fast Delivery</h5>
+          <p class="text-muted">Products are delivered quickly to the merchant’s location with tracking updates.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hover & Icon CSS -->
+<style>
+  .how-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+    border-radius: 12px;
+  }
+  .how-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+  .icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #e9f5eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    transition: background-color 0.3s ease;
+  }
+  .how-card:hover .icon-circle {
+    background-color: #d4edda;
+  }
+</style>
+
+
+      <!-- FEATURED PRODUCTS (LIGHT BEIGE THEME) -->
+<!-- Featured Products Section -->
+<section class="py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="color: #14532d;">🌾 Featured Products</h2>
+      <p class="text-muted fs-5">Fresh from farms, ready for your market</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Product Card -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card border-0 shadow-sm h-100 product-card">
+          <img src="https://static1.squarespace.com/static/5cde1fa9b154ca0001a26098/t/5d1058a55664b2000101498a/1561352359313/Farm-Fresh-Wheat-Berries-Ephrata-WA-home.jpg?format=1500w" 
+               class="card-img-top product-img" alt="Fresh Wheat">
+          <div class="card-body text-center">
+            <h5 class="fw-bold" style="color: #14532d;">Fresh Wheat</h5>
+            <p class="text-muted mb-2">High-quality organic wheat directly from farms.</p>
+            <span class="fw-bold text-success fs-5">$15 / 50kg</span>
+          </div>
+          <div class="card-footer bg-white text-center">
+            <a href="#" class="btn btn-warning fw-semibold px-4">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card border-0 shadow-sm h-100 product-card">
+          <img src="https://5.imimg.com/data5/SA/HC/KE/SELLER-27082447/fresh-rice.png" 
+               class="card-img-top product-img" alt="Organic Rice">
+          <div class="card-body text-center">
+            <h5 class="fw-bold" style="color: #14532d;">Organic Rice</h5>
+            <p class="text-muted mb-2">Pesticide-free, aromatic rice grains.</p>
+            <span class="fw-bold text-success fs-5">$20 / 50kg</span>
+          </div>
+          <div class="card-footer bg-white text-center">
+            <a href="#" class="btn btn-warning fw-semibold px-4">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card border-0 shadow-sm h-100 product-card">
+          <img src="https://img2.exportersindia.com/product_images/bc-full/dir_129/3858175/fresh-vegetables-1475051753-2411368.jpeg" 
+               class="card-img-top product-img" alt="Fresh Vegetables">
+          <div class="card-body text-center">
+            <h5 class="fw-bold" style="color: #14532d;">Fresh Vegetables</h5>
+            <p class="text-muted mb-2">A mix of seasonal vegetables, hand-picked daily.</p>
+            <span class="fw-bold text-success fs-5">$10 / basket</span>
+          </div>
+          <div class="card-footer bg-white text-center">
+            <a href="#" class="btn btn-warning fw-semibold px-4">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hover & Animation CSS -->
+<style>
+  .product-img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+  .product-card:hover .product-img {
+    transform: scale(1.05);
+  }
+</style>
+
+
+
+<!-- Featured Products Section -->
+<section class="py-5" style="background: linear-gradient(rgba(20, 83, 45, 0.95), rgba(20, 83, 45, 0.95)), url('https://images.unsplash.com/photo-1500937386664-56f97a70e7d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover;">
+  <div class="container">
+    <div class="text-center mb-5 text-white">
+      <h2 class="fw-bold display-6">🌾 Featured Products</h2>
+      <p class="fs-5">Fresh, high-quality produce sourced directly from farmers</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Product Card 1 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card border-0 shadow-lg product-card h-100">
+          <div class="product-img">
+            <img src="https://articles-1mg.gumlet.io/articles/wp-content/uploads/2017/02/rsz_shutterstock_291146909.jpg?compress=true&quality=80&w=640&dpr=2.6" class="card-img-top" alt="Wheat">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="fw-bold" style="color: #14532d;">Premium Wheat</h5>
+            <p class="text-muted mb-2">High-quality, organic wheat from trusted farmers.</p>
+            <h6 class="fw-bold text-success">₹1,200 / Quintal</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card border-0 shadow-lg product-card h-100">
+          <div class="product-img">
+            <img src="https://img1.exportersindia.com/product_images/bc-full/2019/8/2951562/1564735998_p_5028204_972686.jpeg" class="card-img-top" alt="Rice">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="fw-bold" style="color: #14532d;">Basmati Rice</h5>
+            <p class="text-muted mb-2">Aromatic long-grain rice with rich flavor.</p>
+            <h6 class="fw-bold text-success">₹1,800 / Quintal</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card border-0 shadow-lg product-card h-100">
+          <div class="product-img">
+            <img src="https://5.imimg.com/data5/UE/ZA/XR/ANDROID-11110892/product-jpeg-500x500.jpeg" class="card-img-top" alt="Vegetables">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="fw-bold" style="color: #14532d;">Organic Vegetables</h5>
+            <p class="text-muted mb-2">Freshly picked, pesticide-free seasonal veggies.</p>
+            <h6 class="fw-bold text-success">₹50 / Kg</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Card CSS -->
+<style>
+  .product-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  }
+  .product-img {
+    overflow: hidden;
+  }
+  .product-img img {
+    transition: transform 0.4s ease;
+  }
+  .product-card:hover img {
+    transform: scale(1.08);
+  }
+</style>
+
+
+<!-- Why Choose Us Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #f0f7f3 0%, #e6f2ea 100%);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="color: #14532d;">🌟 Why Choose Agritrade Hub?</h2>
+      <p class="text-muted fs-5">Connecting farmers and merchants with trust, transparency, and quality</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Feature 1 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card border-0 shadow-sm p-4 feature-card h-100 text-center">
+          <div class="icon mb-3">
+            <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/14532d/external-trust-agriculture-and-farming-flatart-icons-flat-flatarticons.png" alt="Trust">
+          </div>
+          <h5 class="fw-bold" style="color: #14532d;">Trusted Platform</h5>
+          <p class="text-muted">Verified farmers and merchants ensure every transaction is safe and reliable.</p>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card border-0 shadow-sm p-4 feature-card h-100 text-center">
+          <div class="icon mb-3">
+            <img src="https://img.icons8.com/color/64/eco.png" alt="Quality">
+          </div>
+          <h5 class="fw-bold" style="color: #14532d;">Quality Assured</h5>
+          <p class="text-muted">Every product goes through quality checks before being listed for sale.</p>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card border-0 shadow-sm p-4 feature-card h-100 text-center">
+          <div class="icon mb-3">
+            <img src="https://img.icons8.com/color/64/online-money-transfer.png" alt="Secure Payment">
+          </div>
+          <h5 class="fw-bold" style="color: #14532d;">Secure Payments</h5>
+          <p class="text-muted">Seamless and safe online payments with instant transaction confirmation.</p>
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="card border-0 shadow-sm p-4 feature-card h-100 text-center">
+          <div class="icon mb-3">
+            <img src="https://img.icons8.com/color/64/delivery.png" alt="Fast Delivery">
+          </div>
+          <h5 class="fw-bold" style="color: #14532d;">Fast Delivery</h5>
+          <p class="text-muted">Timely delivery of goods with real-time order tracking.</p>
+        </div>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="card border-0 shadow-sm p-4 feature-card h-100 text-center">
+          <div class="icon mb-3">
+            <img src="https://img.icons8.com/color/64/farmer.png" alt="Farmer Support">
+          </div>
+          <h5 class="fw-bold" style="color: #14532d;">Farmer Support</h5>
+          <p class="text-muted">Helping farmers with fair prices and better market access.</p>
+        </div>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="card border-0 shadow-sm p-4 feature-card h-100 text-center">
+          <div class="icon mb-3">
+            <img src="https://img.icons8.com/color/64/combo-chart.png" alt="Growth">
+          </div>
+          <h5 class="fw-bold" style="color: #14532d;">Business Growth</h5>
+          <p class="text-muted">Merchants get access to a wide range of fresh, affordable produce.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section CSS -->
+<style>
+  .feature-card {
+    border-radius: 12px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+  .icon img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+  }
+  .feature-card:hover .icon img {
+    transform: scale(1.15) rotate(5deg);
+  }
+</style>
+
+
+<!-- Call to Action Section -->
+<section class="py-5 bg-white">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="fw-bold display-5 mb-3 text-success">🌾 Join Agritrade Hub Today</h2>
+    <p class="fs-5 mb-4 text-muted">
+      Whether you are a farmer looking to sell your produce or a merchant searching for quality goods, 
+      <span class="fw-bold text-success">Agritrade Hub</span> connects you to the right opportunities.
+    </p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+      <a href="#farmer-register" class="btn btn-success btn-lg px-4 shadow-sm hover-scale">
+        👨‍🌾 Register as Farmer
+      </a>
+      <a href="#merchant-register" class="btn btn-outline-success btn-lg px-4 shadow-sm hover-scale">
+        🛒 Register as Merchant
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Hover Animation -->
+<style>
+  .hover-scale {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .hover-scale:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 128, 0, 0.15);
+  }
+</style>
+
+
+<div class="row">
+	<!-- Testimonials Section -->
+<section class="py-5" style="background-color: #14532d;">
+  <div class="container">
+    <div class="text-center text-white mb-5">
+      <h2 class="fw-bold">💬 What Our Users Say</h2>
+      <p class="fs-5 text-light">Hear from our farmers and merchants who have transformed their business with Agritrade Hub</p>
+    </div>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active" data-aos="fade-up">
+          <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mb-3 shadow" alt="Farmer" width="90" height="90">
+              <h5 class="text-warning">Ravi Kumar</h5>
+              <p class="text-light mb-2">Farmer from Punjab</p>
+              <p class="fst-italic text-white-50">"Selling my crops has never been easier. Agritrade Hub connects me directly to genuine buyers and ensures I get fair prices every time."</p>
+              <div class="text-warning">
+                ★★★★★
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="carousel-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+              <img src="https://randomuser.me/api/portraits/women/45.jpg" class="rounded-circle mb-3 shadow" alt="Merchant" width="90" height="90">
+              <h5 class="text-warning">Priya Sharma</h5>
+              <p class="text-light mb-2">Merchant from Delhi</p>
+              <p class="fst-italic text-white-50">"I can order fresh produce directly from trusted farmers. The quality is always great and delivery is super fast."</p>
+              <div class="text-warning">
+                ★★★★★
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="carousel-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+              <img src="https://randomuser.me/api/portraits/men/50.jpg" class="rounded-circle mb-3 shadow" alt="Merchant" width="90" height="90">
+              <h5 class="text-warning">Amit Verma</h5>
+              <p class="text-light mb-2">Merchant from Lucknow</p>
+              <p class="fst-italic text-white-50">"Agritrade Hub has helped me expand my business by giving me access to high-quality produce at competitive prices."</p>
+              <div class="text-warning">
+                ★★★★☆
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  #testimonialCarousel img {
+    border: 3px solid #facc15; /* Gold border */
+    transition: transform 0.3s ease;
+  }
+  #testimonialCarousel img:hover {
+    transform: scale(1.08);
+  }
+</style>
+	
+</div>
+
+
+
+
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
+    </main>
+  </body>
+</html>

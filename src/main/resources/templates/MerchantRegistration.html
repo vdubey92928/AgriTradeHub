@@ -1,0 +1,98 @@
+<html th:replace="~{base::layout(~{::main})}">
+  <body>
+    <main>
+      <!-- Hero Section -->
+      <div class="row" style="background-image: url('images/bg_img.jpg'); background-size: cover; height: 220px;">
+        <div class="col-sm-12 bg-dark bg-opacity-75 d-flex justify-content-center align-items-center">
+          <h3 class="text-center text-white fw-bold display-5">
+            🏬 Merchant Registration
+          </h3>
+        </div>
+      </div>
+
+      <!-- Registration Section -->
+      <div class="container py-5">
+        <div class="row g-4 align-items-center">
+          
+          <!-- Left Side Content -->
+          <div class="col-lg-5">
+            <h2 class="fw-bold text-primary">Why Become a Merchant?</h2>
+            <p class="text-muted mt-3">
+              By joining <strong>Agritrade Hub</strong>, merchants can directly connect with verified farmers, 
+              access quality produce, and expand their market reach securely.
+            </p>
+            <ul class="list-unstyled mt-3">
+              <li>✅ Direct access to farm-fresh produce</li>
+              <li>✅ Build trusted farmer relationships</li>
+              <li>✅ Secure payment & trade facilities</li>
+              <li>✅ Expand your business nationwide</li>
+            </ul>
+            <p class="mt-3 text-muted">
+              Registration is quick and free. Start scaling your business with 
+              <span class="fw-semibold">transparent and profitable trading!</span>
+            </p>
+          </div>
+
+          <!-- Right Side Form -->
+          <div class="col-lg-7">
+            <div class="card shadow border-0 rounded-3">
+              <div class="card-header bg-primary text-white text-center py-3">
+                <h4 class="fw-bold mb-0">Register as a Merchant</h4>
+              </div>
+              <div class="card-body p-4">
+                <form method="post" th:object="${merchant}">
+                  <div class="row">
+                    
+                    <div class="col-md-6 mb-3">
+                      <label class="fw-semibold">Full Name</label>
+                      <input th:field="${merchant.name}" type="text" class="form-control" required placeholder="Enter Full Name">
+                    </div>
+                    
+                    
+                    <div class="col-md-6 mb-3">
+                      <label class="fw-semibold">Email</label>
+                      <input th:field="${merchant.email}" type="email" class="form-control" required placeholder="Enter Email">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                      <label class="fw-semibold">Contact Number</label>
+                      <input th:field="${merchant.contactNumber}" type="tel" class="form-control" required placeholder="Enter Contact">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                      <label class="fw-semibold">Aadhar Number</label>
+                      <input th:field="${merchant.aadharNumber}" type="tel" class="form-control" required placeholder="Enter Contact">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                      <label class="fw-semibold">PAN Card Number</label>
+                      <input th:field="${merchant.pancardNumber}" type="text" class="form-control" required placeholder="Enter PAN Card Number">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                      <label class="fw-semibold">Password</label>
+                      <input th:field="${merchant.password}" type="password" class="form-control" required placeholder="Enter Password">
+                    </div>
+                    
+                    <div class="col-12 mb-3">
+                      <label class="fw-semibold">Address</label>
+                      <textarea th:field="${merchant.address}" rows="2" class="form-control" required placeholder="Enter Business Address"></textarea>
+                    </div>
+                    
+                    <div class="col-12 text-center pt-3">
+                      <button type="submit" class="btn btn-primary px-5 py-2 fw-bold shadow-sm hover-scale">
+                        Register Now
+                      </button>
+                    </div>
+                    
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

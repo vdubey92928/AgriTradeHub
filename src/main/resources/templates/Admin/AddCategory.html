@@ -1,0 +1,66 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+	<body>
+		<main>
+		
+			<div class="row">
+				<div class="col-sm-7 mx-auto">
+					<div class="card">
+						<div class="card-header bg-success">
+							<h4 class="text-center text-white fw-bold m-0">Add Product Categories</h4>
+						</div>
+						<div class="card-body">
+							<form method="post">
+								<div class="my-3 w-75 mx-auto">
+									<label class="fw-bold">Enter Category Name</label>
+									<input type="text" class="form-control" name="categoryName" required placeholder="Category Name...">
+								</div>
+								<div class="text-center pt-4">
+									<button type="submit" class="btn btn-success btn-sm">Add Category</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+			
+				<div class="col-sm-9 mx-auto mt-5">
+					<div class="card">
+						<div class="card-header bg-success p-2">
+							<h5 class="text-center m-0 text-white fw-bold">Manage Product Categories</h5>
+						</div>
+						<div class="card-body">
+							<div class="table-rsponsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>Sr. No.</th>
+											<th>Category Name</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="cate, srno :${categories}">
+											<td th:text="${srno.index + 1}" style="padding: 4px 10px !important;">1</td>
+											<td th:text="${cate.categoryName}" style="padding: 4px 10px !important;">ABCD</td>
+											<td class="text-center" style="padding: 4px 10px !important;">
+												<a th:href="@{DeleteCategory(id = ${cate.id})}" onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger btn-sm">Delete</a>
+											</td>
+										</tr>
+									</tbody>
+									
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</main>
+	</body>
+</html>
+
+
+

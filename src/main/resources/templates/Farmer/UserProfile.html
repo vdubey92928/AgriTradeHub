@@ -1,0 +1,90 @@
+<html th:replace="~{Farmer/Farmerbase::layout(~{::main})}">
+  <body>
+    <main class="container">
+      <!-- Page Header -->
+      <div class="text-center mb-4">
+        <h3 class="fw-bold text-success m-0">
+          <i class="bi bi-person-circle me-2"></i> Farmer Profile
+        </h3>
+        <p class="text-muted">Manage and update your personal details</p>
+      </div>
+
+      <div class="row">
+        <!-- Profile Summary Card -->
+        <div class="col-lg-4 mb-4">
+          <div class="card shadow-lg border-0 rounded-4 text-center p-4 pt-5">
+            <img th:src="@{'/ProfilePicture/' + ${farmer.profilePic}}"
+                 th:if="${farmer.profilePic != null}"
+                 class="rounded-circle shadow mb-3 mx-auto"
+                 style="width: 160px; height: 160px; object-fit: cover;"
+                 alt="Profile Image"/>
+            <img src="../assets/img/user_img.jpg"
+                 th:if="${farmer.profilePic == null}"
+                 class="rounded-circle shadow mb-3 mx-auto"
+                 style="width: 160px; height: 160px; object-fit: cover;"
+                 alt="Default Profile Image"/>
+
+            <h4 class="fw-bold text-dark mb-1" th:text="${farmer.name}">Farmer Name</h4>
+            <p class="text-muted mb-1"><i class="bi bi-telephone me-1"></i> <span th:text="${farmer.contactNumber}"></span></p>
+            <p class="text-muted"><i class="bi bi-envelope-at me-1"></i> <span th:text="${farmer.email}"></span></p>
+
+            <!-- Upload New Profile Pic -->
+            <form method="post" enctype="multipart/form-data" class="mt-3">
+              <div class="input-group">
+                <input name="ImageFile" type="file" class="form-control" required accept=".png, .jpg, .jpeg, .webp">
+                <button class="btn btn-outline-success"><i class="bi bi-upload me-1"></i>Upload</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Personal Information Card -->
+        <div class="col-lg-8 mb-4">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-success text-white rounded-top-4">
+              <h5 class="m-0"><i class="bi bi-person-lines-fill me-2"></i>Your Personal Data</h5>
+            </div>
+            <div class="card-body">
+              <table class="table table-borderless table-hover">
+                <tbody>
+                  <tr>
+                    <th class="text-muted"><i class="bi bi-person me-2"></i>Name</th>
+                    <td th:text="${farmer.name}" class="fw-semibold"></td>
+                  </tr>
+                  <tr>
+                    <th class="text-muted"><i class="bi bi-telephone-forward me-2"></i>Contact No</th>
+                    <td th:text="${farmer.contactNumber}" class="fw-semibold"></td>
+                  </tr>
+                  <tr>
+                    <th class="text-muted"><i class="bi bi-credit-card-2-front me-2"></i>Aadhar Number</th>
+                    <td th:text="${farmer.aadharNumber}" class="fw-semibold"></td>
+                  </tr>
+                  <tr>
+                    <th class="text-muted"><i class="bi bi-credit-card me-2"></i>Pan Card</th>
+                    <td th:text="${farmer.pancardNumber}" class="fw-semibold"></td>
+                  </tr>
+                  <tr>
+                    <th class="text-muted"><i class="bi bi-geo-alt me-2"></i>Address</th>
+                    <td th:text="${farmer.address}" class="fw-semibold"></td>
+                  </tr>
+                  <tr>
+                    <th class="text-muted"><i class="bi bi-calendar-check me-2"></i>Registered On</th>
+                    <td th:text="${#temporals.format(farmer.regDate, 'dd MMM yyyy HH:mm')}" class="fw-semibold"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-footer text-right bg-light">
+              <!-- <a href="/farmer/edit-profile" class="btn btn-outline-primary me-2">
+                <i class="bi bi-pencil-square me-1"></i>Edit Profile
+              </a> -->
+              <a href="Logout" class="btn btn-danger">
+                <i class="bi bi-box-arrow-right me-1"></i>Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
