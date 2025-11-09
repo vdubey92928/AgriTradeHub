@@ -92,7 +92,7 @@ Some important steps:
 --------------------
 
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/AgritradeHub.git
+git clone https://github.com/vdubey92928/AgritradeHub.git
 cd AgritradeHub
 
 2️⃣ Configure the Database
