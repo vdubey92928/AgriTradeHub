@@ -4,6 +4,7 @@ AgriTradeHub is a full-stack web application built using Java Spring Boot, desig
 It empowers farmers to list their produce, merchants to browse and order goods, and administrators to manage the system — all within a secure and AI-assisted environment.
 
 🚀 Features
+--------------------------------------------------------------------------------
 🧑‍🌾 For Farmers
 
 Add and manage product listings with images and real-time stock updates
@@ -61,10 +62,6 @@ IDE (IntelliJ IDEA / Eclipse)
 
 
 
-
-
-
-
 AgritradeHub/
 │
 ├── src/
@@ -89,4 +86,54 @@ AgritradeHub/
 ├── mvnw, mvnw.cmd                 → Maven wrapper scripts
 ├── .gitignore, .gitattributes     → Git configurations
 └── README.md
+
+
+Some important steps:
+--------------------
+
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/AgritradeHub.git
+cd AgritradeHub
+
+2️⃣ Configure the Database
+
+Create a MySQL database named agritradehub
+
+Update credentials in src/main/resources/application.properties:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/agritradehub
+spring.datasource.username=YOUR_USERNAME
+spring.datasource.password=YOUR_PASSWORD
+spring.jpa.hibernate.ddl-auto=update
+
+3️⃣ Add Gemini API Key
+
+In application.properties:
+
+gemini.api.key=YOUR_GEMINI_API_KEY
+
+4️⃣ Run the Application
+mvn spring-boot:run
+
+5️⃣ Access the App
+
+Visit http://localhost:8080
+
+Default roles:
+
+Admin: manages users and categories
+
+Farmer & Merchant: register/login to access dashboards
+
+📊 AI Module (Gemini API Integration)
+
+Implemented in GeminiService.java and GeminiController.java
+
+Fetches historical crop rate data
+
+Uses Gemini API to predict price trend and future rate
+
+Displays result in gemini.html
+
+d
 `
