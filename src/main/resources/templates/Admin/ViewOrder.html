@@ -1,0 +1,61 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+	<body>
+		<main>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card">
+						<div class="card-header bg-success">
+							<h4 class="text-center text-white m-0">View All Orders</h4>
+						</div>
+						<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Sr. No.</th>
+										<th>Merchant Name</th>
+										<th>Merchant Contact</th>
+										<th>Seller Name</th>
+										<th>Seller Contact</th>
+										<th>Product Name</th>
+										<th>Price/Unit</th>
+										<th>Quantity</th>
+										<th>Total Amount</th>
+										<th>Payment Id</th>
+										<th>Transaction Id</th>
+										<th>Order Date</th>
+										<th>Delivery Date</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr th:each="o, srno : ${orderList}">
+										<td th:text="${srno.index+1}">1</td>
+										<td th:text="${o.order.merchant.name}"></td>
+										<td th:text="${o.order.merchant.contactNumber}"></td>
+										<td th:text="${o.order.farmer.name}"></td>
+										<td th:text="${o.order.farmer.contactNumber}"></td>
+										<td th:text="${o.order.productName}"></td>
+										<td th:text="${'₹ ' +o.order.pricePerUnit}" class="text-center"></td>
+										<td th:text="${o.order.quantity}" class="text-center"></td>
+										<td th:text="${'₹ '+ o.order.quantity * o.order.pricePerUnit}" class="text-center"></td>
+										<td th:text="${o.payId}"></td>
+										<td th:text="${o.transactionId}"></td>
+										<td th:text="${#temporals.format(o.order.orderDate, 'dd-MM-yyyy HH:mm')}"></td>
+										<td>
+											<span th:text="${#temporals.format(o.order.deliveryDate, 'dd-MM-yyyy HH:mm')}"></span>
+											<span th:if="${o.order.deliveryDate == null}">No Records</span>
+										</td>
+										<td th:text="${o.order.orderStatus}" class="fw-bold"></td>
+									</tr>
+								</tbody>
+							</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

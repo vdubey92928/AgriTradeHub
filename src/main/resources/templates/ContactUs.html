@@ -1,0 +1,153 @@
+<html th:replace="~{base::layout(~{::main})}">
+  <body>
+    <main>
+      <!-- Hero Section -->
+      <div class="row" 
+           style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                  url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80') 
+                  center/cover no-repeat; height: 300px;">
+        <div class="col-sm-12 d-flex justify-content-center align-items-center">
+          <div class="text-center">
+          	<h2 class="text-white fw-bold display-5" data-aos="fade-down">📞 Contact Us</h2>
+          <p class="lead text-white">We’re here to assist you. Reach out today!</p>
+          </div>
+        </div>
+      </div>
+     
+      <!-- Contact Info + Form -->
+      <section class="container py-5">
+        <div class="row g-5">
+          
+          <!-- Left: Info -->
+          <div class="col-md-5" data-aos="fade-right">
+            <h2 class="section-title mb-4">Get in Touch</h2>
+
+            <!-- Hukmawati Cold Storage Card -->
+            <div class="contact-info-box mb-4">
+              <h4 class="mb-2 text-success">Hukmawati Cold Storage</h4>
+              <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i> Barabanki, Uttar Pradesh</p>
+              <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 98765 43210</p>
+              <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> info@hukmawaticoldstorage.com</p>
+              <p class="mb-0"><i class="bi bi-clock-fill me-2"></i> Mon - Sat: 9AM - 6PM</p>
+            </div>
+
+            <!-- Extra Info Cards -->
+            <div class="contact-info-box mb-3">
+              <i class="bi bi-people-fill"></i>
+              <h6 class="mt-2">Customer Support</h6>
+              <p>We ensure 24/7 support for our clients.</p>
+            </div>
+
+            <div class="contact-info-box">
+              <i class="bi bi-truck"></i>
+              <h6 class="mt-2">Logistics Support</h6>
+              <p>On-time storage and delivery management.</p>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="col-md-7 pt-3" data-aos="fade-left">
+          	<div th:if="${msg}" class="alert alert-success alert-dismissible fade show" role="alert">
+  				<span th:text="${msg}"></span>
+  				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+            
+            <div class="card mt-5 shadow border-0 rounded-4">
+              <div class="card-body p-4">
+                <h3 class="mb-4 text-success">Send us a Message</h3>
+                <form method="post" th:object="${enquiry}">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <input th:field="${enquiry.name}" type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6">
+                      <input th:field="${enquiry.contactNo}" type="text" class="form-control" placeholder="Contact Number" required>
+                    </div>
+                    <div class="col-md-6">
+                      <input th:field="${enquiry.email}" type="email" class="form-control" placeholder="Email Address" required>
+                    </div>
+                    <div class="col-md-6">
+                      <input th:field="${enquiry.subject}" type="text" class="form-control" placeholder="Subject" required>
+                    </div>
+                    <div class="col-12">
+                      <input th:field="${enquiry.address}" type="text" class="form-control" placeholder="Your Address" required>
+                    </div>
+                    <div class="col-12">
+                      <textarea th:field="${enquiry.message}" rows="4" class="form-control" placeholder="Type your message..." required></textarea>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-success btn-custom mt-3 w-100">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Map -->
+      <section class="container pb-5" data-aos="zoom-in">
+        <div class="map-box">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.686216785264!2d81.19089187517235!3d26.93816377664115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2f5a2b0b1f3%3A0xd6b0e38cf255d8b!2sBarabanki%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1684400000000!5m2!1sen!2sin" 
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </section>
+      
+      
+      
+      <style>
+      body {
+        background-color: #f9f9f9;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .section-title {
+        font-weight: 700;
+        color: #155724;
+      }
+
+      .contact-info-box {
+        background: #fff;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+
+      .contact-info-box:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      }
+
+      .contact-info-box i {
+        font-size: 1rem;
+        color: #198754;
+      }
+
+      .form-control {
+        border-radius: 10px;
+        padding: 12px;
+      }
+
+      .btn-custom {
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-custom:hover {
+        transform: scale(1.05);
+        background: #155724 !important;
+      }
+
+      .map-box {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      }
+    </style>
+      
+    </main>
+</body>
+</html>

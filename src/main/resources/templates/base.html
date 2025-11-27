@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en" th:fragment="layout(content)">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agritrade Hub</title>
+
+  <link href="images/fav-icon.jpg" rel="icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!-- Navbar -->
+    <div class="row">
+    	<nav class="navbar navbar-expand-lg bg-success p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img alt="image not found" src="images/fav-icon.jpg" width="70px" class="ps-2">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link text-white" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/AboutUs">About Us</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/Services">Services</a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Registration</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/FarmerRegistration">Farmer Registration</a></li>
+                <li><a class="dropdown-item" href="/MerchantRegistration">Merchant Registration</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link text-white" href="/ContactUs">Contact Us</a></li>
+            <li class="nav-item"><a class="mx-4 text-white btn btn-danger rounded-pill" href="/Login">Login Here</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    	
+    </div>
+    <!-- Main Content -->
+    <div th:replace="${content}"></div>
+
+	<!-- ================== FOOTER SECTION ================== -->
+<div class="row mt-3">
+  <footer class="text-white pt-5" style="background-color: #14532d;">
+    <div class="container pb-4">
+      <div class="row g-4">
+        
+        <!-- 🌾 About Section -->
+        <div class="col-md-3">
+          <h5 class="fw-bold mb-3">🌾 Agritrade Hub</h5>
+          <p class="small">
+            Connecting farmers and merchants through a trusted digital platform for
+            trading fresh produce, grains, and agricultural products efficiently.
+          </p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-white social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-white social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- 🔗 Quick Links -->
+        <div class="col-md-3">
+          <h5 class="fw-bold mb-3">Quick Links</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/" class="footer-link">Home</a></li>
+            <li class="mb-2"><a href="/AboutUs" class="footer-link">About Us</a></li>
+            <li class="mb-2"><a href="/Services" class="footer-link">Services</a></li>
+            <li class="mb-2"><a href="/ContactUs" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- 📁 Important Links -->
+        <div class="col-md-3">
+          <h5 class="fw-bold mb-3">Important Links</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/FarmerRegistration" class="footer-link">Farmer Registration</a></li>
+            <li class="mb-2"><a href="/MerchantRegistration" class="footer-link">Merchant Registration</a></li>
+            <li class="mb-2"><a href="/Login" class="footer-link">User Login</a></li>
+            <li class="mb-2"><a href="/PrivacyPolicy" class="footer-link">Privacy Policy</a></li>
+            <li class="mb-2"><a href="/Terms" class="footer-link">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- 📞 Contact -->
+        <div class="col-md-3">
+          <h5 class="fw-bold mb-3">Contact Us</h5>
+          <p class="small mb-1"><i class="fas fa-map-marker-alt me-2"></i> Lucknow, Uttar Pradesh, India</p>
+          <p class="small mb-1"><i class="fas fa-phone-alt me-2"></i> +91 98765 43210</p>
+          <p class="small"><i class="fas fa-envelope me-2"></i> support@agritradehub.com</p>
+          <div class="mt-3">
+            <a href="/ContactUs" class="btn btn-outline-light btn-sm rounded-pill px-3">
+              <i class="bi bi-chat-dots me-1"></i> Get in Touch
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="text-center py-3" style="background-color: #0f3d24; font-size: 0.85rem;">
+      © 2025 <strong>Agritrade Hub</strong> | Designed & Developed with ❤️ in India.
+    </div>
+  </footer>
+</div>
+
+<!-- ================== FOOTER STYLES ================== -->
+<style>
+.footer-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
+.social-icon {
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.social-icon:hover {
+  background: #ffc107;
+  color: #14532d !important;
+  transform: scale(1.1);
+}
+footer h5 {
+  border-left: 4px solid #ffc107;
+  padding-left: 10px;
+}
+footer .btn-outline-light:hover {
+  background-color: #ffc107;
+  color: #14532d;
+  border-color: #ffc107;
+}
+</style>
+	     
+
+</div>
+
+  <!-- Floating Chat Button -->
+  <div id="aiChatBox" onclick="toggleChat()">💬</div>
+
+  <!-- Floating Chat Window -->
+  <div id="chatWindow">
+    <div class="chat-wrapper">
+      <div class="chat-header">
+        <i class="bi bi-robot"></i>
+        <span>AgriTrade AI Assistant</span>
+        <i class="bi bi-x-circle close-btn" onclick="toggleChat()"></i>
+      </div>
+
+      <div class="chat-box" id="chatBox"></div>
+
+      <form id="chatForm">
+        <input type="text" id="prompt" name="prompt" placeholder="Ask about crops, prices, or market trends..."
+          required />
+        <button type="submit"><i class="bi bi-send"></i> Send</button>
+      </form>
+    </div>
+  </div>
+
+  <style>
+    /* Floating Chat Button */
+    #aiChatBox {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #2e7d32;
+      color: white;
+      font-size: 28px;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, background 0.3s;
+      z-index: 9999;
+    }
+
+    #aiChatBox:hover {
+      transform: scale(1.1);
+      background: #1b5e20;
+    }
+
+    /* Chat Window */
+    #chatWindow {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      width: 380px;
+      height: 500px;
+      display: none;
+      z-index: 10000;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.4s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .chat-wrapper {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      background: linear-gradient(to right, #2e7d32, #388e3c);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chat-header i.bi-robot {
+      margin-right: 8px;
+      font-size: 20px;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 10px 14px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      background: #f9fff9;
+      scroll-behavior: smooth;
+    }
+
+    .message {
+      margin: 8px 0;
+      padding: 10px 14px;
+      border-radius: 18px;
+      max-width: 80%;
+      line-height: 1.4;
+      word-wrap: break-word;
+    }
+
+    .user {
+      align-self: flex-end;
+      background: #43a047;
+      color: #fff;
+      border-bottom-right-radius: 5px;
+    }
+
+    .bot {
+      align-self: flex-start;
+      background: #e8f5e9;
+      border: 1px solid #c8e6c9;
+      color: #2e7d32;
+      border-bottom-left-radius: 5px;
+    }
+
+    .typing {
+      align-self: flex-start;
+      background: #f1f8f1;
+      border: 1px solid #c8e6c9;
+      color: #999;
+      border-radius: 18px;
+      padding: 10px 14px;
+      font-style: italic;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    #chatform {
+      display: flex;
+      background: #f1f8e9;
+      border-top: 1px solid #c5e1a5;
+      padding: 10px 12px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      border: 1px solid #c5e1a5;
+      border-radius: 25px;
+      padding: 10px 14px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      background: #2e7d32;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    button:hover {
+      background: #1b5e20;
+    }
+  </style>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    const chatWindow = document.getElementById('chatWindow');
+    const chatForm = document.getElementById("chatForm");
+    const chatBox = document.getElementById("chatBox");
+    const input = document.getElementById("prompt");
+
+    function toggleChat() {
+      chatWindow.style.display =
+        chatWindow.style.display === "none" || chatWindow.style.display === "" ? "block" : "none";
+    }
+
+    chatForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const userMessage = input.value.trim();
+      if (!userMessage) return;
+
+      chatBox.innerHTML += `<div class="message user">${userMessage}</div>`;
+      chatBox.scrollTop = chatBox.scrollHeight;
+      input.value = "";
+
+      const typingDiv = document.createElement("div");
+      typingDiv.className = "typing";
+      typingDiv.textContent = "AI Bot is thinking...";
+      chatBox.appendChild(typingDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      try {
+        const response = await fetch("/Gemini/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: "prompt=" + encodeURIComponent(userMessage)
+        });
+
+        const botResponse = await response.text();
+        typingDiv.remove();
+        chatBox.innerHTML += `<div class="message bot">${botResponse}</div>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+      } catch {
+        typingDiv.remove();
+        chatBox.innerHTML += `<div class="message bot">⚠️ Error getting response.</div>`;
+      }
+    });
+  </script>
+</body>
+</html>
